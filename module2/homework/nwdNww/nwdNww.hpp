@@ -2,18 +2,21 @@
 #include <string>
 
 int NWD(const int lhs, const int rhs) {
-    int a = abs(lhs), b = abs(rhs), diff = 0;
+    int first = abs(lhs), 
+        second = abs(rhs), 
+        diff = 0;
 
-    if(lhs == 0){ return rhs; }
-    if(rhs == 0){ return lhs; }
+    if(lhs == 0 || rhs == 0){ 
+        return lhs + rhs; 
+    }
 
-    while(b != 0){
+    while(second != 0){
         diff = a % b;
-        a = b;
-        b = diff;
+        first = second;
+        second = diff;
     }
     
-    return a;
+    return first;
 }
 
 int NWW(const int lhs, const int rhs) {
