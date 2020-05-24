@@ -11,7 +11,7 @@ int NWD(const int lhs, const int rhs) {
     }
 
     while(second != 0){
-        diff = a % b;
+        diff = first % second;
         first = second;
         second = diff;
     }
