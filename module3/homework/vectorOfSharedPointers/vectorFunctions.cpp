@@ -16,3 +16,10 @@ void print(const std::vector<std::shared_ptr<int>>& vectorOfPointers) {
         std::cout << *element << ' ';
     }
 }
+void add10(const std::vector<std::shared_ptr<int>>& vectorOfPointers) {
+    for (auto& element : vectorOfPointers) {
+        if (element != nullptr) {
+            *element += 10;
+        }
+    }
+}
