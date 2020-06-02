@@ -23,3 +23,16 @@ void add10(const std::vector<std::shared_ptr<int>>& vectorOfPointers) {
         }
     }
 }
+
+void sub10(int* const vPtr) {
+    if (vPtr != nullptr) {
+        *vPtr -= 10;
+    }
+}
+void sub10(const std::vector<std::shared_ptr<int>>& vectorOfPointers) {
+    for (auto& element : vectorOfPointers) {
+        if (element != nullptr) {
+            sub10(element.get());
+        }
+    }
+}
