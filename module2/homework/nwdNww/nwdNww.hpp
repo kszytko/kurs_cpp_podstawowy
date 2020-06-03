@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-int NWD(const int lhs, const int rhs) {
+int NWD(int lhs, int rhs) {
     int first = abs(lhs), 
         second = abs(rhs), 
         diff = 0;
