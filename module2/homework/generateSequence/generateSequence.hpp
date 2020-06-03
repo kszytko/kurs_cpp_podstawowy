@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 
-std::vector<int> generateSequence(const int count, const int step) {
+std::vector<int> generateSequence(int count, int step) {
     if(count < 0){
         return {};
     }
