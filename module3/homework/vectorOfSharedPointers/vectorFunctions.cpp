@@ -18,20 +18,20 @@ void print(const std::vector<std::shared_ptr<int>>& vectorOfPointers) {
 }
 void add10(const std::vector<std::shared_ptr<int>>& vectorOfPointers) {
     for (auto& element : vectorOfPointers) {
-        if (element != nullptr) {
+        if (element) {
             *element += 10;
         }
     }
 }
 
 void sub10(int* const vPtr) {
-    if (vPtr != nullptr) {
+    if (vPtr) {
         *vPtr -= 10;
     }
 }
 void sub10(const std::vector<std::shared_ptr<int>>& vectorOfPointers) {
     for (auto& element : vectorOfPointers) {
-        if (element != nullptr) {
+        if (element) {
             sub10(element.get());
         }
     }
