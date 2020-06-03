@@ -33,3 +33,8 @@ void getErrorMessage(const ErrorCode& error){
 
     std::cout << message;
 }
+
+bool doesPasswordMatch(std::string first, std::string second){
+    return first == secound;
+
+}
