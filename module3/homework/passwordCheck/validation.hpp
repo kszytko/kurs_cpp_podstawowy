@@ -7,34 +7,7 @@ class ErrorCode{
     PasswordDoesNotMatch
 }
 
-void getErrorMessage(const ErrorCode& error){
-    std::string message;
+void getErrorMessage(const ErrorCode&);
 
-    switch(error){
-        case ErrorCode::Ok:
-            message = "Ok";
-            break;
-        case ErrorCode::PasswordNeedsAtLeastNineCharacters:
-            message = "PasswordNeedsAtLeastNineCharacters";
-            break;
-        case ErrorCode::PasswordNeedsAtLeastOneNumber:
-            message = "PasswordNeedsAtLeastOneNumber";
-            break;
-        case ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter:
-            message = "PasswordNeedsAtLeastOneSpecialCharacter";
-            break;
-        case ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter:
-            message = "PasswordNeedsAtLeastOneUppercaseLetter";
-            break;
-        case ErrorCode::PasswordDoesNotMatch:
-            message = "PasswordDoesNotMatch";
-            break;
-    }
-
-    std::cout << message;
-}
-
-bool doesPasswordMatch(std::string first, std::string second){
-    return first == secound;
-
-}
+bool doesPasswordMatch(std::string, std::string);
+ErrorCode checkPasswordRules(std::string);
