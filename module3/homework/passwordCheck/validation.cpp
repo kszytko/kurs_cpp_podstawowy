@@ -1,34 +1,23 @@
 #include "validation.hpp"
 #include <algorithm>
-#include <random>
-#include <ctype.h>
+#include <string>
 
-const size_t MINIMUM_PASSWORD_LENGTH = 9;
-
-std::string getErrorMessage(const ErrorCode& error){
-    std::string message;
-
+std::string getErrorMessage(const ErrorCode error){
     switch(error){
         case ErrorCode::Ok:
-            message = "OK";
-            break;
+            return "OK";
         case ErrorCode::PasswordNeedsAtLeastNineCharacters:
-            message = "Password needs at least nine characters";
-            break;
+            return "Password needs at least nine characters";
         case ErrorCode::PasswordNeedsAtLeastOneNumber:
-            message = "Password needs at least one number";
-            break;
+            return "Password needs at least one number";
         case ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter:
-            message = "Password needs at least one special character";
-            break;
+            return "Password needs at least one special character";
         case ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter:
-            message = "Password needs at least one uppercase letter";
-            break;
+            return "Password needs at least one uppercase letter";
         case ErrorCode::PasswordsDoesNotMatch:
-            message = "Passwords does not match";
-            break;
+            return "Passwords does not match";
     }
-    return message;
+    return {};
 }
 bool doesPasswordsMatch(const std::string& password, const std::string& repeatedPassword){
     return password == repeatedPassword;
