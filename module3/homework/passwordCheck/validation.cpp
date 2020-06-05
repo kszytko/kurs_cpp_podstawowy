@@ -24,7 +24,9 @@ std::string getErrorMessage(const ErrorCode& error){
     }
     return message;
 }
-bool doesPasswordsMatch(const std::string&, const std::string&);
+bool doesPasswordsMatch(const std::string& password, const std::string& repeatedPassword){
+    return password == repeatedPassword;
+}
 
 ErrorCode checkPasswordRules(const std::string&);
 
