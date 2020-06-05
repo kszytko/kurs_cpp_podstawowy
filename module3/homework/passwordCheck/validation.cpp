@@ -1,6 +1,6 @@
 #include "validation.hpp"
-#include <random>
 #include <algorithm>
+#include <random>
 #include <ctype.h>
 
 const size_t MINIMUM_PASSWORD_LENGTH = 9;
@@ -42,6 +42,16 @@ ErrorCode checkPasswordRules(const std::string& password){
     if(std::none_of(password.begin(), password.end(), ::isdigit)){
         return ErrorCode::PasswordNeedsAtLeastOneNumber;
     }
+
+    if(std::all_of(password.begin(), password.end(), ::isalnum)){
+        return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
+    }
+
+    if(std::none_of(password.begin(), password.end(), ::isupper)){
+        return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
+    }
+
+    return ErrorCode::Ok;
 }
 
 ErrorCode checkPassword(const std::string& password, const std::string& repeatedPassword){
