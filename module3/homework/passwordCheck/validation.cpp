@@ -1,5 +1,8 @@
 #include "validation.hpp"
 #include <random>
+#include <algorithm>
+
+const size_t MINIMUM_PASSWORD_LENGTH = 9;
 
 std::string getErrorMessage(const ErrorCode& error){
     std::string message;
@@ -31,9 +34,9 @@ bool doesPasswordsMatch(const std::string& password, const std::string& repeated
 }
 
 ErrorCode checkPasswordRules(const std::string& password){
-    std::random_device rd;
-    std::uniform_int_distribution<> distrib(0, 5);
-    return static_cast<ErrorCode>(distrib(rd));
+    if(password.length() < MINIMUM_PASSWORD_LENGTH){
+        return ErrorCode::PasswordNeedsAtLeastNineCharacters;
+    }
 
 }
 
