@@ -1,13 +1,16 @@
-class ErrorCode{
+#pragma once
+#include <string>
+
+enum class ErrorCode{
     Ok,
     PasswordNeedsAtLeastNineCharacters,
     PasswordNeedsAtLeastOneNumber,
     PasswordNeedsAtLeastOneSpecialCharacter,
     PasswordNeedsAtLeastOneUppercaseLetter,
-    PasswordDoesNotMatch
-}
+    PasswordsDoesNotMatch
+};
 
-void getErrorMessage(const ErrorCode&);
-
-bool doesPasswordMatch(std::string, std::string);
-ErrorCode checkPasswordRules(std::string);
+std::string getErrorMessage(const ErrorCode&);
+bool doesPasswordsMatch(const std::string&, const std::string&);
+ErrorCode checkPasswordRules(const std::string&);
+ErrorCode checkPassword(const std::string&, const std::string&);
