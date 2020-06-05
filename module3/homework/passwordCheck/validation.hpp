@@ -1,4 +1,5 @@
 #pragma once 
+
 #include <string>
 
 constexpr size_t MINIMUM_PASSWORD_LENGTH = 9;
