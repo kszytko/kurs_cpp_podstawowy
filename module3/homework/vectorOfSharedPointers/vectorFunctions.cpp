@@ -32,8 +32,6 @@ void sub10(int* const vPtr) {
 }
 void sub10(const std::vector<std::shared_ptr<int>>& vectorOfPointers) {
     for (auto& element : vectorOfPointers) {
-        if (element) {
-            sub10(element.get());
-        }
+        sub10(element.get());
     }
 }
